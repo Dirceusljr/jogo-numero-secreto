@@ -1,6 +1,17 @@
 function verificaSeOChutePossuiUmValorValido(chute) {
     const numero = +chute
 
+    if (chute == "game over") {
+        document.body.innerHTML = `
+        <div class="game-over">
+            <h2>Game Over! O jogo acabou!</h2>
+            <h3>O número secreto era ${numeroSecreto}!</h3>
+
+            <button id="jogar-novamente" class="btn-jogar">Jogar novamente</button>
+        </div>
+        `
+    }
+
     if (chuteForInvalido(numero)) {
         elementoChute.innerHTML += '<div>Valor inválido</div>'
         return
